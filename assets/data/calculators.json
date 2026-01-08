@@ -1,0 +1,1038 @@
+{
+  "version": "1.0.0",
+  "calculators": [
+    {
+      "id": "minute_ventilation",
+      "name": "Minute Ventilation",
+      "category": "Ventilation",
+      "description": "Calculates the total volume of air moved in and out of the lungs per minute.",
+      "formula": "VE = VT × RR",
+      "inputs": [
+        {
+          "id": "tidal_volume",
+          "label": "Tidal Volume",
+          "defaultUnit": "mL",
+          "alternateUnits": [{"unit": "L", "conversionFactor": 1000}],
+          "minValue": 50,
+          "maxValue": 2000,
+          "warningMin": 200,
+          "warningMax": 1000,
+          "hint": "Volume of air per breath"
+        },
+        {
+          "id": "respiratory_rate",
+          "label": "Respiratory Rate",
+          "defaultUnit": "breaths/min",
+          "minValue": 1,
+          "maxValue": 60,
+          "warningMin": 8,
+          "warningMax": 35
+        }
+      ],
+      "outputs": [
+        {
+          "id": "minute_ventilation",
+          "label": "Minute Ventilation",
+          "unit": "L/min",
+          "decimalPlaces": 1
+        }
+      ],
+      "clinicalNote": "Normal adult MV is 5-8 L/min. Increased MV may indicate respiratory distress or metabolic acidosis.",
+      "sourceUrls": ["https://www.respiratorytherapyzone.com/respiratory-therapy-formulas-calculations/"]
+    },
+    {
+      "id": "alveolar_ventilation",
+      "name": "Alveolar Ventilation",
+      "category": "Ventilation",
+      "description": "Calculates the volume of fresh air reaching the alveoli per minute for gas exchange.",
+      "formula": "VA = (VT - VD) × RR",
+      "inputs": [
+        {
+          "id": "tidal_volume",
+          "label": "Tidal Volume",
+          "defaultUnit": "mL",
+          "minValue": 50,
+          "maxValue": 2000,
+          "warningMin": 200,
+          "warningMax": 1000
+        },
+        {
+          "id": "dead_space",
+          "label": "Dead Space Volume",
+          "defaultUnit": "mL",
+          "minValue": 0,
+          "maxValue": 500,
+          "hint": "Anatomical dead space ~150 mL in adults"
+        },
+        {
+          "id": "respiratory_rate",
+          "label": "Respiratory Rate",
+          "defaultUnit": "breaths/min",
+          "minValue": 1,
+          "maxValue": 60
+        }
+      ],
+      "outputs": [
+        {
+          "id": "alveolar_ventilation",
+          "label": "Alveolar Ventilation",
+          "unit": "L/min",
+          "decimalPlaces": 2
+        }
+      ],
+      "clinicalNote": "Alveolar ventilation is the effective ventilation for gas exchange. Dead space reduces the efficiency of breathing.",
+      "sourceUrls": []
+    },
+    {
+      "id": "dead_space_ratio",
+      "name": "Dead Space Ratio (Vd/Vt)",
+      "category": "Ventilation",
+      "description": "Calculates the proportion of each breath that does not participate in gas exchange using the Bohr equation.",
+      "formula": "Vd/Vt = (PaCO₂ - PeCO₂) / PaCO₂",
+      "inputs": [
+        {
+          "id": "paco2",
+          "label": "Arterial PaCO₂",
+          "defaultUnit": "mmHg",
+          "alternateUnits": [{"unit": "kPa", "conversionFactor": 7.5}],
+          "minValue": 10,
+          "maxValue": 150,
+          "warningMin": 25,
+          "warningMax": 80
+        },
+        {
+          "id": "peco2",
+          "label": "Mixed Expired PeCO₂",
+          "defaultUnit": "mmHg",
+          "alternateUnits": [{"unit": "kPa", "conversionFactor": 7.5}],
+          "minValue": 0,
+          "maxValue": 100
+        }
+      ],
+      "outputs": [
+        {
+          "id": "vd_vt_ratio",
+          "label": "Vd/Vt Ratio",
+          "unit": "",
+          "decimalPlaces": 2,
+          "interpretation": "Normal: 0.20-0.40. >0.60 may indicate ventilatory failure."
+        }
+      ],
+      "clinicalNote": "Elevated Vd/Vt indicates inefficient ventilation due to increased dead space (pulmonary embolism, ARDS, etc.).",
+      "sourceUrls": []
+    },
+    {
+      "id": "tidal_volume_ibw",
+      "name": "Tidal Volume by IBW",
+      "category": "Ventilation",
+      "description": "Calculates target tidal volume based on ideal body weight for lung-protective ventilation.",
+      "formula": "VT = IBW × mL/kg",
+      "inputs": [
+        {
+          "id": "ideal_body_weight",
+          "label": "Ideal Body Weight",
+          "defaultUnit": "kg",
+          "alternateUnits": [{"unit": "lb", "conversionFactor": 0.4536}],
+          "minValue": 20,
+          "maxValue": 150,
+          "warningMin": 30,
+          "warningMax": 100
+        },
+        {
+          "id": "ml_per_kg",
+          "label": "mL per kg",
+          "defaultUnit": "mL/kg",
+          "minValue": 4,
+          "maxValue": 12,
+          "defaultValue": 6,
+          "hint": "6-8 mL/kg for lung-protective ventilation"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "tidal_volume",
+          "label": "Tidal Volume",
+          "unit": "mL",
+          "decimalPlaces": 0
+        }
+      ],
+      "clinicalNote": "Lung-protective ventilation uses 6-8 mL/kg IBW. Higher volumes may cause ventilator-induced lung injury.",
+      "sourceUrls": []
+    },
+    {
+      "id": "rapid_shallow_breathing",
+      "name": "Rapid Shallow Breathing Index",
+      "category": "Ventilation",
+      "description": "Predicts likelihood of successful weaning from mechanical ventilation.",
+      "formula": "RSBI = f / VT",
+      "inputs": [
+        {
+          "id": "respiratory_rate",
+          "label": "Respiratory Rate",
+          "defaultUnit": "breaths/min",
+          "minValue": 1,
+          "maxValue": 60,
+          "warningMax": 40
+        },
+        {
+          "id": "tidal_volume",
+          "label": "Tidal Volume",
+          "defaultUnit": "mL",
+          "alternateUnits": [{"unit": "L", "conversionFactor": 1000}],
+          "minValue": 50,
+          "maxValue": 2000,
+          "hint": "Spontaneous tidal volume during weaning trial"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "rsbi",
+          "label": "RSBI",
+          "unit": "breaths/min/L",
+          "decimalPlaces": 0,
+          "interpretation": "<105: Likely successful wean. >105: Higher risk of failure."
+        }
+      ],
+      "clinicalNote": "RSBI <105 is associated with ~80% weaning success. Should be measured during spontaneous breathing trial.",
+      "sourceUrls": []
+    },
+    {
+      "id": "static_compliance",
+      "name": "Static Compliance",
+      "category": "Ventilation",
+      "description": "Measures lung and chest wall compliance without airflow resistance effects.",
+      "formula": "Cstat = VT / (Pplat - PEEP)",
+      "inputs": [
+        {
+          "id": "tidal_volume",
+          "label": "Tidal Volume",
+          "defaultUnit": "mL",
+          "minValue": 50,
+          "maxValue": 2000
+        },
+        {
+          "id": "plateau_pressure",
+          "label": "Plateau Pressure",
+          "defaultUnit": "cmH₂O",
+          "minValue": 0,
+          "maxValue": 60,
+          "warningMax": 30
+        },
+        {
+          "id": "peep",
+          "label": "PEEP",
+          "defaultUnit": "cmH₂O",
+          "minValue": 0,
+          "maxValue": 30
+        }
+      ],
+      "outputs": [
+        {
+          "id": "static_compliance",
+          "label": "Static Compliance",
+          "unit": "mL/cmH₂O",
+          "decimalPlaces": 1,
+          "interpretation": "Normal: 60-100 mL/cmH₂O. Low values suggest stiff lungs (ARDS, fibrosis)."
+        }
+      ],
+      "clinicalNote": "Static compliance reflects lung and chest wall elasticity. Requires an inspiratory hold maneuver.",
+      "sourceUrls": []
+    },
+    {
+      "id": "dynamic_compliance",
+      "name": "Dynamic Compliance",
+      "category": "Ventilation",
+      "description": "Measures total respiratory system compliance including airway resistance effects.",
+      "formula": "Cdyn = VT / (PIP - PEEP)",
+      "inputs": [
+        {
+          "id": "tidal_volume",
+          "label": "Tidal Volume",
+          "defaultUnit": "mL",
+          "minValue": 50,
+          "maxValue": 2000
+        },
+        {
+          "id": "peak_inspiratory_pressure",
+          "label": "Peak Inspiratory Pressure",
+          "defaultUnit": "cmH₂O",
+          "minValue": 0,
+          "maxValue": 80,
+          "warningMax": 40
+        },
+        {
+          "id": "peep",
+          "label": "PEEP",
+          "defaultUnit": "cmH₂O",
+          "minValue": 0,
+          "maxValue": 30
+        }
+      ],
+      "outputs": [
+        {
+          "id": "dynamic_compliance",
+          "label": "Dynamic Compliance",
+          "unit": "mL/cmH₂O",
+          "decimalPlaces": 1
+        }
+      ],
+      "clinicalNote": "Dynamic compliance is affected by both lung stiffness and airway resistance. Always lower than static compliance.",
+      "sourceUrls": []
+    },
+    {
+      "id": "airway_resistance",
+      "name": "Airway Resistance",
+      "category": "Ventilation",
+      "description": "Calculates resistance to airflow in the respiratory system.",
+      "formula": "Raw = (PIP - Pplat) / Flow",
+      "inputs": [
+        {
+          "id": "peak_inspiratory_pressure",
+          "label": "Peak Inspiratory Pressure",
+          "defaultUnit": "cmH₂O",
+          "minValue": 0,
+          "maxValue": 80
+        },
+        {
+          "id": "plateau_pressure",
+          "label": "Plateau Pressure",
+          "defaultUnit": "cmH₂O",
+          "minValue": 0,
+          "maxValue": 60
+        },
+        {
+          "id": "flow",
+          "label": "Inspiratory Flow",
+          "defaultUnit": "L/min",
+          "minValue": 10,
+          "maxValue": 120,
+          "hint": "Peak inspiratory flow rate"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "airway_resistance",
+          "label": "Airway Resistance",
+          "unit": "cmH₂O/L/sec",
+          "decimalPlaces": 1,
+          "interpretation": "Normal: 0.5-2.5 cmH₂O/L/sec. Elevated with bronchospasm, secretions, or small ET tube."
+        }
+      ],
+      "clinicalNote": "High resistance may indicate bronchospasm, secretions, kinked ETT, or small airway. Gap between PIP and Pplat reflects resistance.",
+      "sourceUrls": []
+    },
+    {
+      "id": "aa_gradient",
+      "name": "A-a Gradient",
+      "category": "Oxygenation",
+      "description": "Calculates the difference between alveolar and arterial oxygen partial pressures.",
+      "formula": "A-a = PAO₂ - PaO₂",
+      "inputs": [
+        {
+          "id": "alveolar_po2",
+          "label": "Alveolar PO₂ (PAO₂)",
+          "defaultUnit": "mmHg",
+          "alternateUnits": [{"unit": "kPa", "conversionFactor": 7.5}],
+          "minValue": 50,
+          "maxValue": 700,
+          "hint": "Calculate using Alveolar Gas Equation"
+        },
+        {
+          "id": "arterial_po2",
+          "label": "Arterial PO₂ (PaO₂)",
+          "defaultUnit": "mmHg",
+          "alternateUnits": [{"unit": "kPa", "conversionFactor": 7.5}],
+          "minValue": 20,
+          "maxValue": 600,
+          "warningMin": 60
+        }
+      ],
+      "outputs": [
+        {
+          "id": "aa_gradient",
+          "label": "A-a Gradient",
+          "unit": "mmHg",
+          "decimalPlaces": 1,
+          "interpretation": "Normal: 5-15 mmHg (age-dependent, ~2.5 + 0.21 × age). Elevated indicates V/Q mismatch or shunt."
+        }
+      ],
+      "clinicalNote": "Elevated A-a gradient suggests pulmonary pathology (V/Q mismatch, shunt, diffusion impairment). Normal A-a gradient with hypoxemia suggests hypoventilation.",
+      "sourceUrls": []
+    },
+    {
+      "id": "alveolar_gas_equation",
+      "name": "Alveolar Gas Equation",
+      "category": "Oxygenation",
+      "description": "Calculates the partial pressure of oxygen in the alveoli.",
+      "formula": "PAO₂ = FiO₂(PB - PH₂O) - (PaCO₂/RQ)",
+      "inputs": [
+        {
+          "id": "fio2",
+          "label": "FiO₂",
+          "defaultUnit": "%",
+          "minValue": 21,
+          "maxValue": 100,
+          "hint": "Fraction of inspired oxygen"
+        },
+        {
+          "id": "barometric_pressure",
+          "label": "Barometric Pressure",
+          "defaultUnit": "mmHg",
+          "minValue": 500,
+          "maxValue": 800,
+          "defaultValue": 760,
+          "hint": "Sea level = 760 mmHg"
+        },
+        {
+          "id": "water_vapor_pressure",
+          "label": "Water Vapor Pressure",
+          "defaultUnit": "mmHg",
+          "minValue": 0,
+          "maxValue": 60,
+          "defaultValue": 47,
+          "hint": "Usually 47 mmHg at body temperature"
+        },
+        {
+          "id": "paco2",
+          "label": "PaCO₂",
+          "defaultUnit": "mmHg",
+          "alternateUnits": [{"unit": "kPa", "conversionFactor": 7.5}],
+          "minValue": 10,
+          "maxValue": 150,
+          "warningMin": 25,
+          "warningMax": 80
+        },
+        {
+          "id": "respiratory_quotient",
+          "label": "Respiratory Quotient",
+          "defaultUnit": "",
+          "minValue": 0.7,
+          "maxValue": 1.0,
+          "defaultValue": 0.8,
+          "hint": "Usually 0.8"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "alveolar_po2",
+          "label": "Alveolar PO₂",
+          "unit": "mmHg",
+          "decimalPlaces": 1
+        }
+      ],
+      "clinicalNote": "Use this to calculate PAO₂ for the A-a gradient. The result represents the maximum possible arterial PO₂.",
+      "sourceUrls": []
+    },
+    {
+      "id": "pf_ratio",
+      "name": "P/F Ratio (PaO₂/FiO₂)",
+      "category": "Oxygenation",
+      "description": "Assesses oxygenation status and ARDS severity.",
+      "formula": "P/F = PaO₂ / FiO₂",
+      "inputs": [
+        {
+          "id": "pao2",
+          "label": "PaO₂",
+          "defaultUnit": "mmHg",
+          "alternateUnits": [{"unit": "kPa", "conversionFactor": 7.5}],
+          "minValue": 20,
+          "maxValue": 600,
+          "warningMin": 60
+        },
+        {
+          "id": "fio2",
+          "label": "FiO₂",
+          "defaultUnit": "%",
+          "minValue": 21,
+          "maxValue": 100
+        }
+      ],
+      "outputs": [
+        {
+          "id": "pf_ratio",
+          "label": "P/F Ratio",
+          "unit": "mmHg",
+          "decimalPlaces": 0,
+          "interpretation": "Normal: >400. Mild ARDS: 200-300. Moderate ARDS: 100-200. Severe ARDS: <100."
+        }
+      ],
+      "clinicalNote": "P/F ratio is used in Berlin criteria for ARDS classification. Must have PEEP ≥5 cmH₂O. Does not account for PaCO₂.",
+      "sourceUrls": []
+    },
+    {
+      "id": "oxygen_content",
+      "name": "Oxygen Content (CaO₂)",
+      "category": "Oxygenation",
+      "description": "Calculates the total oxygen content of arterial blood.",
+      "formula": "CaO₂ = (1.34 × Hgb × SaO₂) + (0.003 × PaO₂)",
+      "inputs": [
+        {
+          "id": "hemoglobin",
+          "label": "Hemoglobin",
+          "defaultUnit": "g/dL",
+          "minValue": 3,
+          "maxValue": 25,
+          "warningMin": 7,
+          "warningMax": 18
+        },
+        {
+          "id": "sao2",
+          "label": "SaO₂",
+          "defaultUnit": "%",
+          "minValue": 50,
+          "maxValue": 100,
+          "warningMin": 90
+        },
+        {
+          "id": "pao2",
+          "label": "PaO₂",
+          "defaultUnit": "mmHg",
+          "minValue": 20,
+          "maxValue": 600
+        }
+      ],
+      "outputs": [
+        {
+          "id": "oxygen_content",
+          "label": "Oxygen Content",
+          "unit": "mL O₂/dL",
+          "decimalPlaces": 1,
+          "interpretation": "Normal: 16-22 mL O₂/dL. Hemoglobin-bound O₂ accounts for ~98% of total content."
+        }
+      ],
+      "clinicalNote": "CaO₂ depends primarily on hemoglobin level and saturation. Dissolved oxygen (0.003 × PaO₂) contributes minimally at normal PaO₂.",
+      "sourceUrls": []
+    },
+    {
+      "id": "oxygen_delivery",
+      "name": "Oxygen Delivery (DO₂)",
+      "category": "Oxygenation",
+      "description": "Calculates the total amount of oxygen delivered to tissues per minute.",
+      "formula": "DO₂ = CaO₂ × CO × 10",
+      "inputs": [
+        {
+          "id": "cao2",
+          "label": "Oxygen Content (CaO₂)",
+          "defaultUnit": "mL O₂/dL",
+          "minValue": 5,
+          "maxValue": 25
+        },
+        {
+          "id": "cardiac_output",
+          "label": "Cardiac Output",
+          "defaultUnit": "L/min",
+          "minValue": 1,
+          "maxValue": 15,
+          "warningMin": 3,
+          "warningMax": 8
+        }
+      ],
+      "outputs": [
+        {
+          "id": "oxygen_delivery",
+          "label": "Oxygen Delivery",
+          "unit": "mL O₂/min",
+          "decimalPlaces": 0,
+          "interpretation": "Normal: 900-1200 mL O₂/min. Critical DO₂ is ~300-400 mL O₂/min."
+        }
+      ],
+      "clinicalNote": "Adequate DO₂ is essential for tissue oxygenation. Can be increased by improving CaO₂ (transfusion, O₂) or cardiac output.",
+      "sourceUrls": []
+    },
+    {
+      "id": "oxygen_cylinder_duration",
+      "name": "Oxygen Cylinder Duration",
+      "category": "Oxygen Equipment",
+      "description": "Calculates how long an oxygen cylinder will last at a given flow rate.",
+      "formula": "Duration = (Pressure × Tank Factor) / Flow",
+      "inputs": [
+        {
+          "id": "tank_pressure",
+          "label": "Tank Pressure",
+          "defaultUnit": "psi",
+          "minValue": 0,
+          "maxValue": 3000,
+          "hint": "Current gauge pressure"
+        },
+        {
+          "id": "tank_factor",
+          "label": "Tank Factor",
+          "defaultUnit": "",
+          "minValue": 0.1,
+          "maxValue": 10,
+          "hint": "D: 0.16, E: 0.28, G: 2.41, H/K: 3.14"
+        },
+        {
+          "id": "flow_rate",
+          "label": "Flow Rate",
+          "defaultUnit": "L/min",
+          "minValue": 0.5,
+          "maxValue": 25
+        }
+      ],
+      "outputs": [
+        {
+          "id": "duration_minutes",
+          "label": "Duration",
+          "unit": "minutes",
+          "decimalPlaces": 0
+        },
+        {
+          "id": "duration_hours",
+          "label": "Duration",
+          "unit": "hours",
+          "decimalPlaces": 1
+        }
+      ],
+      "clinicalNote": "Tank factors: D=0.16, E=0.28, G=2.41, H/K=3.14. Always maintain safety reserve (~500 psi) for transport.",
+      "sourceUrls": []
+    },
+    {
+      "id": "fio2_estimation",
+      "name": "FiO₂ Estimation (Nasal Cannula)",
+      "category": "Oxygen Equipment",
+      "description": "Estimates delivered FiO₂ from low-flow nasal cannula oxygen.",
+      "formula": "FiO₂ ≈ 20 + (4 × Flow Rate)",
+      "inputs": [
+        {
+          "id": "flow_rate",
+          "label": "Flow Rate",
+          "defaultUnit": "L/min",
+          "minValue": 0,
+          "maxValue": 6,
+          "hint": "Nasal cannula flow 1-6 L/min"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "estimated_fio2",
+          "label": "Estimated FiO₂",
+          "unit": "%",
+          "decimalPlaces": 0
+        }
+      ],
+      "clinicalNote": "This is a rough estimate. Actual FiO₂ varies with respiratory rate, tidal volume, and breathing pattern. Not accurate above 6 L/min.",
+      "sourceUrls": []
+    },
+    {
+      "id": "mean_arterial_pressure",
+      "name": "Mean Arterial Pressure",
+      "category": "Hemodynamics",
+      "description": "Calculates the average arterial pressure during a cardiac cycle.",
+      "formula": "MAP = DBP + ⅓(SBP - DBP)",
+      "inputs": [
+        {
+          "id": "systolic",
+          "label": "Systolic BP",
+          "defaultUnit": "mmHg",
+          "minValue": 40,
+          "maxValue": 300,
+          "warningMin": 90,
+          "warningMax": 180
+        },
+        {
+          "id": "diastolic",
+          "label": "Diastolic BP",
+          "defaultUnit": "mmHg",
+          "minValue": 20,
+          "maxValue": 200,
+          "warningMin": 50,
+          "warningMax": 100
+        }
+      ],
+      "outputs": [
+        {
+          "id": "mean_arterial_pressure",
+          "label": "MAP",
+          "unit": "mmHg",
+          "decimalPlaces": 0,
+          "interpretation": "Normal: 70-105 mmHg. Target ≥65 mmHg for organ perfusion."
+        }
+      ],
+      "clinicalNote": "MAP reflects perfusion pressure to organs. Target MAP ≥65 mmHg in sepsis. Higher targets may be needed for chronic hypertension.",
+      "sourceUrls": []
+    },
+    {
+      "id": "cerebral_perfusion_pressure",
+      "name": "Cerebral Perfusion Pressure",
+      "category": "Hemodynamics",
+      "description": "Calculates the pressure gradient driving cerebral blood flow.",
+      "formula": "CPP = MAP - ICP",
+      "inputs": [
+        {
+          "id": "map",
+          "label": "Mean Arterial Pressure",
+          "defaultUnit": "mmHg",
+          "minValue": 30,
+          "maxValue": 200
+        },
+        {
+          "id": "icp",
+          "label": "Intracranial Pressure",
+          "defaultUnit": "mmHg",
+          "minValue": 0,
+          "maxValue": 100,
+          "warningMax": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "cerebral_perfusion_pressure",
+          "label": "CPP",
+          "unit": "mmHg",
+          "decimalPlaces": 0,
+          "interpretation": "Target: 60-70 mmHg in TBI. <50 mmHg associated with ischemia."
+        }
+      ],
+      "clinicalNote": "CPP targets vary by condition. Traumatic brain injury typically targets CPP 60-70 mmHg. Monitor for both low CPP and high ICP.",
+      "sourceUrls": []
+    },
+    {
+      "id": "cardiac_output",
+      "name": "Cardiac Output",
+      "category": "Hemodynamics",
+      "description": "Calculates the volume of blood pumped by the heart per minute.",
+      "formula": "CO = SV × HR",
+      "inputs": [
+        {
+          "id": "stroke_volume",
+          "label": "Stroke Volume",
+          "defaultUnit": "mL",
+          "minValue": 20,
+          "maxValue": 200,
+          "warningMin": 40,
+          "warningMax": 120
+        },
+        {
+          "id": "heart_rate",
+          "label": "Heart Rate",
+          "defaultUnit": "bpm",
+          "minValue": 20,
+          "maxValue": 250,
+          "warningMin": 50,
+          "warningMax": 120
+        }
+      ],
+      "outputs": [
+        {
+          "id": "cardiac_output",
+          "label": "Cardiac Output",
+          "unit": "L/min",
+          "decimalPlaces": 1,
+          "interpretation": "Normal: 4-8 L/min. Varies with body size and metabolic demand."
+        }
+      ],
+      "clinicalNote": "CO may be measured by thermodilution or estimated from echocardiography. Use Cardiac Index for size-adjusted comparison.",
+      "sourceUrls": []
+    },
+    {
+      "id": "cardiac_index",
+      "name": "Cardiac Index",
+      "category": "Hemodynamics",
+      "description": "Calculates cardiac output normalized to body surface area.",
+      "formula": "CI = CO / BSA",
+      "inputs": [
+        {
+          "id": "cardiac_output",
+          "label": "Cardiac Output",
+          "defaultUnit": "L/min",
+          "minValue": 1,
+          "maxValue": 15
+        },
+        {
+          "id": "body_surface_area",
+          "label": "Body Surface Area",
+          "defaultUnit": "m²",
+          "minValue": 0.5,
+          "maxValue": 3,
+          "hint": "Calculate using BSA calculator"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "cardiac_index",
+          "label": "Cardiac Index",
+          "unit": "L/min/m²",
+          "decimalPlaces": 2,
+          "interpretation": "Normal: 2.5-4.0 L/min/m². <2.2 indicates low output state."
+        }
+      ],
+      "clinicalNote": "CI allows comparison across patients of different sizes. Low CI (<2.2) may indicate cardiogenic shock or hypovolemia.",
+      "sourceUrls": []
+    },
+    {
+      "id": "systemic_vascular_resistance",
+      "name": "Systemic Vascular Resistance",
+      "category": "Hemodynamics",
+      "description": "Calculates resistance to blood flow in the systemic circulation.",
+      "formula": "SVR = (MAP - CVP) / CO × 80",
+      "inputs": [
+        {
+          "id": "map",
+          "label": "Mean Arterial Pressure",
+          "defaultUnit": "mmHg",
+          "minValue": 30,
+          "maxValue": 200
+        },
+        {
+          "id": "cvp",
+          "label": "Central Venous Pressure",
+          "defaultUnit": "mmHg",
+          "minValue": -5,
+          "maxValue": 30
+        },
+        {
+          "id": "cardiac_output",
+          "label": "Cardiac Output",
+          "defaultUnit": "L/min",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "svr",
+          "label": "SVR",
+          "unit": "dynes·sec/cm⁵",
+          "decimalPlaces": 0,
+          "interpretation": "Normal: 900-1400. Low (<800) in sepsis. High (>1400) in cardiogenic shock."
+        }
+      ],
+      "clinicalNote": "SVR helps differentiate shock types: low in septic/distributive, high in cardiogenic/hypovolemic. Guide vasopressor/vasodilator therapy.",
+      "sourceUrls": []
+    },
+    {
+      "id": "ideal_body_weight",
+      "name": "Ideal Body Weight",
+      "category": "Body Measurements",
+      "description": "Calculates ideal body weight using the Devine formula for ventilator settings.",
+      "formula": "IBW (M) = 50 + 2.3(height - 60)\nIBW (F) = 45.5 + 2.3(height - 60)",
+      "inputs": [
+        {
+          "id": "height",
+          "label": "Height",
+          "defaultUnit": "cm",
+          "alternateUnits": [{"unit": "in", "conversionFactor": 2.54}],
+          "minValue": 100,
+          "maxValue": 250
+        },
+        {
+          "id": "is_male",
+          "label": "Sex (Male=1, Female=0)",
+          "defaultUnit": "",
+          "minValue": 0,
+          "maxValue": 1,
+          "hint": "Enter 1 for male, 0 for female"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "ideal_body_weight",
+          "label": "Ideal Body Weight",
+          "unit": "kg",
+          "decimalPlaces": 1
+        }
+      ],
+      "clinicalNote": "Use IBW (not actual weight) for calculating tidal volume in mechanical ventilation. Based on height, not actual weight.",
+      "sourceUrls": []
+    },
+    {
+      "id": "body_surface_area",
+      "name": "Body Surface Area (BSA)",
+      "category": "Body Measurements",
+      "description": "Calculates body surface area using the Mosteller formula.",
+      "formula": "BSA = √(height × weight / 3600)",
+      "inputs": [
+        {
+          "id": "height",
+          "label": "Height",
+          "defaultUnit": "cm",
+          "alternateUnits": [{"unit": "in", "conversionFactor": 2.54}],
+          "minValue": 50,
+          "maxValue": 250
+        },
+        {
+          "id": "weight",
+          "label": "Weight",
+          "defaultUnit": "kg",
+          "alternateUnits": [{"unit": "lb", "conversionFactor": 0.4536}],
+          "minValue": 1,
+          "maxValue": 300
+        }
+      ],
+      "outputs": [
+        {
+          "id": "body_surface_area",
+          "label": "BSA",
+          "unit": "m²",
+          "decimalPlaces": 2
+        }
+      ],
+      "clinicalNote": "BSA is used to calculate cardiac index and drug dosing. Average adult BSA is ~1.7-2.0 m².",
+      "sourceUrls": []
+    },
+    {
+      "id": "bmi",
+      "name": "Body Mass Index",
+      "category": "Body Measurements",
+      "description": "Calculates body mass index from height and weight.",
+      "formula": "BMI = weight / height²",
+      "inputs": [
+        {
+          "id": "height",
+          "label": "Height",
+          "defaultUnit": "cm",
+          "alternateUnits": [{"unit": "in", "conversionFactor": 2.54}],
+          "minValue": 50,
+          "maxValue": 250
+        },
+        {
+          "id": "weight",
+          "label": "Weight",
+          "defaultUnit": "kg",
+          "alternateUnits": [{"unit": "lb", "conversionFactor": 0.4536}],
+          "minValue": 1,
+          "maxValue": 500
+        }
+      ],
+      "outputs": [
+        {
+          "id": "bmi",
+          "label": "BMI",
+          "unit": "kg/m²",
+          "decimalPlaces": 1,
+          "interpretation": "Underweight: <18.5. Normal: 18.5-24.9. Overweight: 25-29.9. Obese: ≥30."
+        }
+      ],
+      "clinicalNote": "BMI is a screening tool. Does not distinguish between muscle and fat mass. May not be accurate for athletes or elderly.",
+      "sourceUrls": []
+    },
+    {
+      "id": "anion_gap",
+      "name": "Anion Gap",
+      "category": "Acid-Base",
+      "description": "Calculates the difference between measured cations and anions to identify metabolic acidosis type.",
+      "formula": "AG = Na - (Cl + HCO₃)",
+      "inputs": [
+        {
+          "id": "sodium",
+          "label": "Sodium",
+          "defaultUnit": "mEq/L",
+          "minValue": 100,
+          "maxValue": 180,
+          "warningMin": 130,
+          "warningMax": 150
+        },
+        {
+          "id": "chloride",
+          "label": "Chloride",
+          "defaultUnit": "mEq/L",
+          "minValue": 70,
+          "maxValue": 130,
+          "warningMin": 95,
+          "warningMax": 110
+        },
+        {
+          "id": "bicarbonate",
+          "label": "Bicarbonate",
+          "defaultUnit": "mEq/L",
+          "minValue": 5,
+          "maxValue": 50,
+          "warningMin": 18,
+          "warningMax": 28
+        }
+      ],
+      "outputs": [
+        {
+          "id": "anion_gap",
+          "label": "Anion Gap",
+          "unit": "mEq/L",
+          "decimalPlaces": 0,
+          "interpretation": "Normal: 8-12 mEq/L. Elevated suggests HAGMA (lactic acidosis, ketoacidosis, toxins, renal failure)."
+        }
+      ],
+      "clinicalNote": "HAGMA causes: MUDPILES (Methanol, Uremia, DKA, Propylene glycol, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates).",
+      "sourceUrls": []
+    },
+    {
+      "id": "winters_formula",
+      "name": "Winter's Formula",
+      "category": "Acid-Base",
+      "description": "Calculates expected PaCO₂ compensation in metabolic acidosis.",
+      "formula": "Expected PaCO₂ = 1.5 × HCO₃ + 8 ± 2",
+      "inputs": [
+        {
+          "id": "bicarbonate",
+          "label": "Bicarbonate",
+          "defaultUnit": "mEq/L",
+          "minValue": 5,
+          "maxValue": 50
+        }
+      ],
+      "outputs": [
+        {
+          "id": "expected_paco2",
+          "label": "Expected PaCO₂",
+          "unit": "mmHg",
+          "decimalPlaces": 0
+        },
+        {
+          "id": "expected_paco2_low",
+          "label": "Expected Range Low",
+          "unit": "mmHg",
+          "decimalPlaces": 0
+        },
+        {
+          "id": "expected_paco2_high",
+          "label": "Expected Range High",
+          "unit": "mmHg",
+          "decimalPlaces": 0
+        }
+      ],
+      "clinicalNote": "Compare actual PaCO₂ to expected. If actual > expected: concomitant respiratory acidosis. If actual < expected: concomitant respiratory alkalosis.",
+      "sourceUrls": []
+    },
+    {
+      "id": "bicarbonate_deficit",
+      "name": "Bicarbonate Deficit",
+      "category": "Acid-Base",
+      "description": "Calculates the amount of bicarbonate needed to correct metabolic acidosis.",
+      "formula": "Deficit = 0.5 × weight × (target HCO₃ - current HCO₃)",
+      "inputs": [
+        {
+          "id": "weight",
+          "label": "Weight",
+          "defaultUnit": "kg",
+          "alternateUnits": [{"unit": "lb", "conversionFactor": 0.4536}],
+          "minValue": 1,
+          "maxValue": 300
+        },
+        {
+          "id": "current_hco3",
+          "label": "Current HCO₃",
+          "defaultUnit": "mEq/L",
+          "minValue": 1,
+          "maxValue": 50
+        },
+        {
+          "id": "target_hco3",
+          "label": "Target HCO₃",
+          "defaultUnit": "mEq/L",
+          "minValue": 10,
+          "maxValue": 30,
+          "defaultValue": 24
+        }
+      ],
+      "outputs": [
+        {
+          "id": "bicarbonate_deficit",
+          "label": "Bicarbonate Deficit",
+          "unit": "mEq",
+          "decimalPlaces": 0
+        }
+      ],
+      "clinicalNote": "Give half the calculated deficit initially, then reassess. Bicarbonate therapy is controversial; treat underlying cause first.",
+      "sourceUrls": []
+    }
+  ]
+}

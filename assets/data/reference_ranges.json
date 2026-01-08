@@ -1,0 +1,190 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "vital_signs_neonatal",
+      "name": "Vital Signs",
+      "population": "neonatal",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": ["https://www.ncbi.nlm.nih.gov/books/NBK538193/"],
+      "items": [
+        {"id": "hr_preterm", "parameter": "Heart Rate (Preterm)", "ageRange": "Preterm", "normalRange": "120-170", "unit": "bpm", "notes": "May be higher in very preterm infants"},
+        {"id": "hr_term", "parameter": "Heart Rate (Term)", "ageRange": "Term", "normalRange": "100-160", "unit": "bpm", "notes": null},
+        {"id": "rr_preterm", "parameter": "Respiratory Rate", "ageRange": "Preterm", "normalRange": "40-60", "unit": "breaths/min", "notes": "Periodic breathing is normal"},
+        {"id": "rr_term", "parameter": "Respiratory Rate", "ageRange": "Term", "normalRange": "30-60", "unit": "breaths/min", "notes": null},
+        {"id": "sbp_preterm", "parameter": "Systolic BP (Preterm)", "ageRange": "<1000g", "normalRange": "39-59", "unit": "mmHg", "notes": "Varies with gestational age and weight"},
+        {"id": "sbp_term", "parameter": "Systolic BP (Term)", "ageRange": "Term", "normalRange": "60-90", "unit": "mmHg", "notes": null},
+        {"id": "spo2", "parameter": "SpO₂ Target", "ageRange": "Preterm", "normalRange": "91-95", "unit": "%", "notes": "Avoid hyperoxia in preterm infants"},
+        {"id": "spo2_term", "parameter": "SpO₂ Target", "ageRange": "Term", "normalRange": "95-100", "unit": "%", "notes": null},
+        {"id": "temp", "parameter": "Temperature", "ageRange": "All", "normalRange": "36.5-37.5", "unit": "°C", "notes": "Axillary temperature"}
+      ]
+    },
+    {
+      "id": "vital_signs_pediatric",
+      "name": "Vital Signs",
+      "population": "pediatric",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": ["https://www.ncbi.nlm.nih.gov/books/NBK538193/"],
+      "items": [
+        {"id": "hr_infant", "parameter": "Heart Rate", "ageRange": "1-12 months", "normalRange": "100-160", "unit": "bpm", "notes": null},
+        {"id": "hr_toddler", "parameter": "Heart Rate", "ageRange": "1-3 years", "normalRange": "90-150", "unit": "bpm", "notes": null},
+        {"id": "hr_preschool", "parameter": "Heart Rate", "ageRange": "3-5 years", "normalRange": "80-140", "unit": "bpm", "notes": null},
+        {"id": "hr_school", "parameter": "Heart Rate", "ageRange": "6-12 years", "normalRange": "70-120", "unit": "bpm", "notes": null},
+        {"id": "hr_adolescent", "parameter": "Heart Rate", "ageRange": "13-18 years", "normalRange": "60-100", "unit": "bpm", "notes": null},
+        {"id": "rr_infant", "parameter": "Respiratory Rate", "ageRange": "1-12 months", "normalRange": "25-40", "unit": "breaths/min", "notes": null},
+        {"id": "rr_toddler", "parameter": "Respiratory Rate", "ageRange": "1-3 years", "normalRange": "20-30", "unit": "breaths/min", "notes": null},
+        {"id": "rr_preschool", "parameter": "Respiratory Rate", "ageRange": "3-5 years", "normalRange": "20-25", "unit": "breaths/min", "notes": null},
+        {"id": "rr_school", "parameter": "Respiratory Rate", "ageRange": "6-12 years", "normalRange": "14-22", "unit": "breaths/min", "notes": null},
+        {"id": "rr_adolescent", "parameter": "Respiratory Rate", "ageRange": "13-18 years", "normalRange": "12-20", "unit": "breaths/min", "notes": null},
+        {"id": "sbp_infant", "parameter": "Systolic BP", "ageRange": "1-12 months", "normalRange": "70-100", "unit": "mmHg", "notes": null},
+        {"id": "sbp_toddler", "parameter": "Systolic BP", "ageRange": "1-3 years", "normalRange": "80-110", "unit": "mmHg", "notes": null},
+        {"id": "sbp_preschool", "parameter": "Systolic BP", "ageRange": "3-5 years", "normalRange": "80-110", "unit": "mmHg", "notes": null},
+        {"id": "sbp_school", "parameter": "Systolic BP", "ageRange": "6-12 years", "normalRange": "85-120", "unit": "mmHg", "notes": null},
+        {"id": "sbp_adolescent", "parameter": "Systolic BP", "ageRange": "13-18 years", "normalRange": "90-120", "unit": "mmHg", "notes": null},
+        {"id": "spo2_peds", "parameter": "SpO₂", "ageRange": "All", "normalRange": "95-100", "unit": "%", "notes": null}
+      ]
+    },
+    {
+      "id": "vital_signs_adult",
+      "name": "Vital Signs",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "hr_adult", "parameter": "Heart Rate", "ageRange": "Adult", "normalRange": "60-100", "unit": "bpm", "notes": "Athletes may have lower resting HR"},
+        {"id": "rr_adult", "parameter": "Respiratory Rate", "ageRange": "Adult", "normalRange": "12-20", "unit": "breaths/min", "notes": null},
+        {"id": "sbp_adult", "parameter": "Systolic BP", "ageRange": "Adult", "normalRange": "90-120", "unit": "mmHg", "notes": "Target varies with comorbidities"},
+        {"id": "dbp_adult", "parameter": "Diastolic BP", "ageRange": "Adult", "normalRange": "60-80", "unit": "mmHg", "notes": null},
+        {"id": "map_adult", "parameter": "Mean Arterial Pressure", "ageRange": "Adult", "normalRange": "70-105", "unit": "mmHg", "notes": "Target ≥65 for organ perfusion"},
+        {"id": "spo2_adult", "parameter": "SpO₂", "ageRange": "Adult", "normalRange": "95-100", "unit": "%", "notes": "88-92% may be target in COPD"},
+        {"id": "temp_adult", "parameter": "Temperature", "ageRange": "Adult", "normalRange": "36.5-37.5", "unit": "°C", "notes": "Oral temperature"}
+      ]
+    },
+    {
+      "id": "abg_values",
+      "name": "Arterial Blood Gas Values",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "ph", "parameter": "pH", "ageRange": "Adult", "normalRange": "7.35-7.45", "unit": "", "notes": "<7.35 acidemia, >7.45 alkalemia"},
+        {"id": "paco2", "parameter": "PaCO₂", "ageRange": "Adult", "normalRange": "35-45", "unit": "mmHg", "notes": "Respiratory component"},
+        {"id": "pao2", "parameter": "PaO₂", "ageRange": "Adult", "normalRange": "80-100", "unit": "mmHg", "notes": "Decreases with age"},
+        {"id": "hco3", "parameter": "HCO₃⁻", "ageRange": "Adult", "normalRange": "22-26", "unit": "mEq/L", "notes": "Metabolic component"},
+        {"id": "be", "parameter": "Base Excess", "ageRange": "Adult", "normalRange": "-2 to +2", "unit": "mEq/L", "notes": null},
+        {"id": "sao2", "parameter": "SaO₂", "ageRange": "Adult", "normalRange": "95-100", "unit": "%", "notes": null}
+      ]
+    },
+    {
+      "id": "abg_neonatal",
+      "name": "Arterial Blood Gas Values",
+      "population": "neonatal",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "ph_neo", "parameter": "pH", "ageRange": "Neonate", "normalRange": "7.30-7.40", "unit": "", "notes": "Slightly lower than adults"},
+        {"id": "paco2_neo", "parameter": "PaCO₂", "ageRange": "Neonate", "normalRange": "35-45", "unit": "mmHg", "notes": null},
+        {"id": "pao2_neo", "parameter": "PaO₂", "ageRange": "Term", "normalRange": "60-80", "unit": "mmHg", "notes": "Lower target to avoid ROP"},
+        {"id": "hco3_neo", "parameter": "HCO₃⁻", "ageRange": "Neonate", "normalRange": "18-22", "unit": "mEq/L", "notes": "Lower than adults"}
+      ]
+    },
+    {
+      "id": "vent_settings_adult",
+      "name": "Ventilator Starting Parameters",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "vt_adult", "parameter": "Tidal Volume", "ageRange": "Adult", "normalRange": "6-8", "unit": "mL/kg IBW", "notes": "Lung protective strategy"},
+        {"id": "rr_vent", "parameter": "Respiratory Rate", "ageRange": "Adult", "normalRange": "12-20", "unit": "breaths/min", "notes": "Adjust per PaCO₂"},
+        {"id": "peep_adult", "parameter": "PEEP", "ageRange": "Adult", "normalRange": "5-8", "unit": "cmH₂O", "notes": "Start low, titrate up"},
+        {"id": "fio2_start", "parameter": "FiO₂ (Initial)", "ageRange": "Adult", "normalRange": "100", "unit": "%", "notes": "Wean to SpO₂ target"},
+        {"id": "pip_limit", "parameter": "PIP Limit", "ageRange": "Adult", "normalRange": "<35", "unit": "cmH₂O", "notes": "Avoid barotrauma"},
+        {"id": "pplat_target", "parameter": "Plateau Pressure", "ageRange": "Adult", "normalRange": "<30", "unit": "cmH₂O", "notes": "ARDS target ≤30"},
+        {"id": "itime", "parameter": "Inspiratory Time", "ageRange": "Adult", "normalRange": "0.8-1.2", "unit": "seconds", "notes": null}
+      ]
+    },
+    {
+      "id": "vent_settings_neonatal",
+      "name": "Ventilator Starting Parameters",
+      "population": "neonatal",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "pip_neo", "parameter": "PIP", "ageRange": "Neonate", "normalRange": "15-25", "unit": "cmH₂O", "notes": "Titrate to chest rise"},
+        {"id": "peep_neo", "parameter": "PEEP", "ageRange": "Neonate", "normalRange": "4-6", "unit": "cmH₂O", "notes": null},
+        {"id": "rr_neo", "parameter": "Respiratory Rate", "ageRange": "Neonate", "normalRange": "20-40", "unit": "breaths/min", "notes": "Higher rates for smaller infants"},
+        {"id": "itime_neo", "parameter": "Inspiratory Time", "ageRange": "Neonate", "normalRange": "0.3-0.5", "unit": "seconds", "notes": null},
+        {"id": "fio2_neo", "parameter": "FiO₂ (Initial)", "ageRange": "Neonate", "normalRange": "21-40", "unit": "%", "notes": "Start low in term, titrate up"}
+      ]
+    },
+    {
+      "id": "lung_volumes",
+      "name": "Lung Volumes & Capacities",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "tv", "parameter": "Tidal Volume", "ageRange": "Adult", "normalRange": "500", "unit": "mL", "notes": "~7 mL/kg"},
+        {"id": "irv", "parameter": "Inspiratory Reserve Volume", "ageRange": "Adult", "normalRange": "3000", "unit": "mL", "notes": null},
+        {"id": "erv", "parameter": "Expiratory Reserve Volume", "ageRange": "Adult", "normalRange": "1100", "unit": "mL", "notes": null},
+        {"id": "rv", "parameter": "Residual Volume", "ageRange": "Adult", "normalRange": "1200", "unit": "mL", "notes": "Cannot be measured by spirometry"},
+        {"id": "ic", "parameter": "Inspiratory Capacity", "ageRange": "Adult", "normalRange": "3500", "unit": "mL", "notes": "TV + IRV"},
+        {"id": "frc", "parameter": "Functional Residual Capacity", "ageRange": "Adult", "normalRange": "2300", "unit": "mL", "notes": "ERV + RV"},
+        {"id": "vc", "parameter": "Vital Capacity", "ageRange": "Adult", "normalRange": "4600", "unit": "mL", "notes": "TV + IRV + ERV"},
+        {"id": "tlc", "parameter": "Total Lung Capacity", "ageRange": "Adult", "normalRange": "5800", "unit": "mL", "notes": "VC + RV"}
+      ]
+    },
+    {
+      "id": "hemodynamics",
+      "name": "Hemodynamic Parameters",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "co", "parameter": "Cardiac Output", "ageRange": "Adult", "normalRange": "4-8", "unit": "L/min", "notes": null},
+        {"id": "ci", "parameter": "Cardiac Index", "ageRange": "Adult", "normalRange": "2.5-4.0", "unit": "L/min/m²", "notes": null},
+        {"id": "sv", "parameter": "Stroke Volume", "ageRange": "Adult", "normalRange": "60-100", "unit": "mL", "notes": null},
+        {"id": "svr", "parameter": "Systemic Vascular Resistance", "ageRange": "Adult", "normalRange": "900-1400", "unit": "dynes·sec/cm⁵", "notes": null},
+        {"id": "pvr", "parameter": "Pulmonary Vascular Resistance", "ageRange": "Adult", "normalRange": "100-250", "unit": "dynes·sec/cm⁵", "notes": null},
+        {"id": "cvp", "parameter": "Central Venous Pressure", "ageRange": "Adult", "normalRange": "2-8", "unit": "mmHg", "notes": null},
+        {"id": "pcwp", "parameter": "Pulmonary Capillary Wedge Pressure", "ageRange": "Adult", "normalRange": "6-12", "unit": "mmHg", "notes": null},
+        {"id": "pap_sys", "parameter": "PA Systolic Pressure", "ageRange": "Adult", "normalRange": "15-30", "unit": "mmHg", "notes": null},
+        {"id": "pap_dia", "parameter": "PA Diastolic Pressure", "ageRange": "Adult", "normalRange": "4-12", "unit": "mmHg", "notes": null},
+        {"id": "mpap", "parameter": "Mean PA Pressure", "ageRange": "Adult", "normalRange": "10-20", "unit": "mmHg", "notes": ">25 = pulmonary hypertension"}
+      ]
+    },
+    {
+      "id": "oxygenation",
+      "name": "Oxygenation Parameters",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "cao2", "parameter": "Arterial Oxygen Content", "ageRange": "Adult", "normalRange": "16-22", "unit": "mL O₂/dL", "notes": null},
+        {"id": "cvo2", "parameter": "Venous Oxygen Content", "ageRange": "Adult", "normalRange": "12-15", "unit": "mL O₂/dL", "notes": null},
+        {"id": "do2", "parameter": "Oxygen Delivery", "ageRange": "Adult", "normalRange": "900-1200", "unit": "mL O₂/min", "notes": null},
+        {"id": "vo2", "parameter": "Oxygen Consumption", "ageRange": "Adult", "normalRange": "200-250", "unit": "mL O₂/min", "notes": null},
+        {"id": "o2er", "parameter": "Oxygen Extraction Ratio", "ageRange": "Adult", "normalRange": "22-30", "unit": "%", "notes": null},
+        {"id": "svo2", "parameter": "Mixed Venous O₂ Saturation", "ageRange": "Adult", "normalRange": "65-75", "unit": "%", "notes": "<60% indicates inadequate DO₂"},
+        {"id": "pf_ratio", "parameter": "P/F Ratio", "ageRange": "Adult", "normalRange": ">400", "unit": "mmHg", "notes": "<300 = ALI, <200 = ARDS"}
+      ]
+    },
+    {
+      "id": "electrolytes",
+      "name": "Electrolytes",
+      "population": "adult",
+      "lastReviewed": "2024-01-01",
+      "sourceUrls": [],
+      "items": [
+        {"id": "na", "parameter": "Sodium", "ageRange": "Adult", "normalRange": "136-145", "unit": "mEq/L", "notes": null},
+        {"id": "k", "parameter": "Potassium", "ageRange": "Adult", "normalRange": "3.5-5.0", "unit": "mEq/L", "notes": null},
+        {"id": "cl", "parameter": "Chloride", "ageRange": "Adult", "normalRange": "98-106", "unit": "mEq/L", "notes": null},
+        {"id": "ca_total", "parameter": "Calcium (Total)", "ageRange": "Adult", "normalRange": "8.5-10.5", "unit": "mg/dL", "notes": null},
+        {"id": "ca_ionized", "parameter": "Calcium (Ionized)", "ageRange": "Adult", "normalRange": "4.5-5.3", "unit": "mg/dL", "notes": null},
+        {"id": "mg", "parameter": "Magnesium", "ageRange": "Adult", "normalRange": "1.5-2.5", "unit": "mg/dL", "notes": null},
+        {"id": "phos", "parameter": "Phosphorus", "ageRange": "Adult", "normalRange": "2.5-4.5", "unit": "mg/dL", "notes": null}
+      ]
+    }
+  ]
+}

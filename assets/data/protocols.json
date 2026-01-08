@@ -1,0 +1,369 @@
+{
+  "version": "1.0.0",
+  "protocols": [
+    {
+      "id": "hfnc_neonate",
+      "name": "HFNC/Vapotherm Initiation - Neonate",
+      "type": "procedure",
+      "description": "High-level workflow for initiating high-flow nasal cannula therapy in neonates.",
+      "disclaimer": "This is a general reference guide. Always follow your institution's specific protocols and physician orders. Settings vary by device manufacturer and patient condition.",
+      "sourceUrls": [],
+      "sections": [
+        {
+          "id": "preparation",
+          "title": "Preparation",
+          "items": [
+            {"id": "prep_1", "text": "Verify physician order for HFNC therapy", "isOptional": false, "subtext": "Confirm flow rate, FiO₂, and target SpO₂ range"},
+            {"id": "prep_2", "text": "Gather equipment: HFNC device, appropriate-sized nasal cannula, heated humidifier", "isOptional": false, "subtext": "Cannula size should not occlude >50% of nares"},
+            {"id": "prep_3", "text": "Ensure suction equipment is available at bedside", "isOptional": false, "subtext": null},
+            {"id": "prep_4", "text": "Position infant with neck in neutral position", "isOptional": false, "subtext": "Use positioning aids as needed"}
+          ]
+        },
+        {
+          "id": "setup",
+          "title": "Device Setup",
+          "items": [
+            {"id": "setup_1", "text": "Connect heated humidifier and fill water chamber", "isOptional": false, "subtext": "Use sterile water"},
+            {"id": "setup_2", "text": "Set humidifier temperature per manufacturer guidelines", "isOptional": false, "subtext": "Typically 34-37°C for neonates"},
+            {"id": "setup_3", "text": "Connect circuit and verify no leaks", "isOptional": false, "subtext": null},
+            {"id": "setup_4", "text": "Set initial flow rate per order", "isOptional": false, "subtext": "Common starting range: 2-8 L/min depending on weight"},
+            {"id": "setup_5", "text": "Set FiO₂ per order", "isOptional": false, "subtext": "Start at ordered FiO₂ or adjust to target SpO₂"}
+          ]
+        },
+        {
+          "id": "application",
+          "title": "Application",
+          "items": [
+            {"id": "app_1", "text": "Apply cannula with prongs inserted into nares", "isOptional": false, "subtext": "Prongs should not blanch nasal tissue"},
+            {"id": "app_2", "text": "Secure cannula with appropriate fixation method", "isOptional": false, "subtext": "Avoid excessive pressure on skin"},
+            {"id": "app_3", "text": "Verify mist is visible at prong tips", "isOptional": false, "subtext": "Indicates adequate humidification"}
+          ]
+        },
+        {
+          "id": "monitoring",
+          "title": "Initial Monitoring",
+          "items": [
+            {"id": "mon_1", "text": "Document baseline vital signs and SpO₂", "isOptional": false, "subtext": null},
+            {"id": "mon_2", "text": "Assess work of breathing (retractions, nasal flaring, grunting)", "isOptional": false, "subtext": null},
+            {"id": "mon_3", "text": "Check for abdominal distension", "isOptional": false, "subtext": "May indicate excessive flow or air swallowing"},
+            {"id": "mon_4", "text": "Reassess in 15-30 minutes and document response", "isOptional": false, "subtext": null},
+            {"id": "mon_5", "text": "Notify physician if no improvement or deterioration", "isOptional": false, "subtext": null}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mv_setup_adult",
+      "name": "Mechanical Ventilation Setup - Adult",
+      "type": "setup",
+      "description": "General checklist for initiating invasive mechanical ventilation in adult patients.",
+      "disclaimer": "This is a general reference guide. Actual ventilator settings depend on patient condition, underlying disease, and institutional protocols. Always follow physician orders.",
+      "sourceUrls": [],
+      "sections": [
+        {
+          "id": "pre_intubation",
+          "title": "Pre-Intubation",
+          "items": [
+            {"id": "pre_1", "text": "Verify ventilator is powered on and passed self-test", "isOptional": false, "subtext": null},
+            {"id": "pre_2", "text": "Connect circuit and test for leaks", "isOptional": false, "subtext": "Occlude patient wye, verify no volume loss"},
+            {"id": "pre_3", "text": "Set initial parameters per physician order", "isOptional": false, "subtext": null},
+            {"id": "pre_4", "text": "Confirm backup ventilation/apnea settings", "isOptional": false, "subtext": null},
+            {"id": "pre_5", "text": "Verify alarms are set appropriately", "isOptional": false, "subtext": "High/low pressure, volume, rate, apnea"}
+          ]
+        },
+        {
+          "id": "initial_settings",
+          "title": "Typical Initial Settings (Lung Protective)",
+          "items": [
+            {"id": "set_1", "text": "Mode: Volume or Pressure Control per order", "isOptional": false, "subtext": "Common: AC/VC or AC/PC"},
+            {"id": "set_2", "text": "Tidal Volume: 6-8 mL/kg IBW", "isOptional": false, "subtext": "Calculate IBW from height, not actual weight"},
+            {"id": "set_3", "text": "Respiratory Rate: 12-20/min", "isOptional": false, "subtext": "Adjust to achieve target PaCO₂"},
+            {"id": "set_4", "text": "PEEP: 5-8 cmH₂O initially", "isOptional": false, "subtext": "Higher PEEP may be needed in ARDS"},
+            {"id": "set_5", "text": "FiO₂: Start at 100%, wean to SpO₂ target", "isOptional": false, "subtext": "Target SpO₂ 92-96% in most patients"},
+            {"id": "set_6", "text": "I:E ratio: 1:2 to 1:3", "isOptional": false, "subtext": "Longer expiratory time in obstructive disease"}
+          ]
+        },
+        {
+          "id": "post_intubation",
+          "title": "Post-Intubation",
+          "items": [
+            {"id": "post_1", "text": "Confirm ETT placement: bilateral breath sounds, EtCO₂, CXR", "isOptional": false, "subtext": null},
+            {"id": "post_2", "text": "Secure ETT and note depth at teeth/lip", "isOptional": false, "subtext": null},
+            {"id": "post_3", "text": "Document initial ventilator settings", "isOptional": false, "subtext": null},
+            {"id": "post_4", "text": "Obtain ABG in 15-30 minutes", "isOptional": false, "subtext": null},
+            {"id": "post_5", "text": "Assess for patient-ventilator synchrony", "isOptional": false, "subtext": null},
+            {"id": "post_6", "text": "Check plateau pressure (target <30 cmH₂O)", "isOptional": false, "subtext": "Perform inspiratory hold maneuver"}
+          ]
+        },
+        {
+          "id": "monitoring",
+          "title": "Ongoing Monitoring",
+          "items": [
+            {"id": "omon_1", "text": "Monitor SpO₂, EtCO₂ continuously", "isOptional": false, "subtext": null},
+            {"id": "omon_2", "text": "Assess breath sounds, chest rise, patient comfort", "isOptional": false, "subtext": null},
+            {"id": "omon_3", "text": "Document ventilator checks per protocol", "isOptional": false, "subtext": null},
+            {"id": "omon_4", "text": "Wean FiO₂ and adjust settings per ABG results", "isOptional": false, "subtext": null}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nrp_quick_ref",
+      "name": "NRP Quick Reference",
+      "type": "emergency",
+      "description": "Memory aid for Neonatal Resuscitation Program key steps. Not a substitute for NRP certification and training.",
+      "disclaimer": "This is a memory aid only. Complete NRP training and certification is required. Always follow current NRP guidelines and your institution's protocols.",
+      "sourceUrls": ["https://www.aap.org/nrp"],
+      "sections": [
+        {
+          "id": "initial_steps",
+          "title": "Initial Steps (The Golden Minute)",
+          "items": [
+            {"id": "nrp_1", "text": "Warm: Place under radiant warmer, dry thoroughly", "isOptional": false, "subtext": "Prevent heat loss"},
+            {"id": "nrp_2", "text": "Position: Sniffing position, clear airway if needed", "isOptional": false, "subtext": "Suction mouth then nose if secretions present"},
+            {"id": "nrp_3", "text": "Stimulate: Dry and flick soles of feet", "isOptional": false, "subtext": null},
+            {"id": "nrp_4", "text": "Evaluate: Breathing and heart rate", "isOptional": false, "subtext": "Target: HR >100, spontaneous breathing"}
+          ]
+        },
+        {
+          "id": "ppv",
+          "title": "Positive Pressure Ventilation",
+          "items": [
+            {"id": "ppv_1", "text": "Indication: Apnea, gasping, or HR <100 after initial steps", "isOptional": false, "subtext": null},
+            {"id": "ppv_2", "text": "Rate: 40-60 breaths/min", "isOptional": false, "subtext": "\"Breathe... two... three... breathe...\""},
+            {"id": "ppv_3", "text": "Initial FiO₂: 21% for term, 21-30% for preterm", "isOptional": false, "subtext": "Titrate to target SpO₂"},
+            {"id": "ppv_4", "text": "Assess chest rise - use MR. SOPA if inadequate", "isOptional": false, "subtext": "Mask, Reposition, Suction, Open mouth, Pressure increase, Airway"},
+            {"id": "ppv_5", "text": "Reassess HR after 30 seconds of effective PPV", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "compressions",
+          "title": "Chest Compressions",
+          "items": [
+            {"id": "cpr_1", "text": "Indication: HR <60 after 30 sec of effective PPV", "isOptional": false, "subtext": null},
+            {"id": "cpr_2", "text": "Technique: Two-thumb encircling hands preferred", "isOptional": false, "subtext": "Compress lower 1/3 of sternum"},
+            {"id": "cpr_3", "text": "Depth: 1/3 AP diameter of chest", "isOptional": false, "subtext": null},
+            {"id": "cpr_4", "text": "Ratio: 3 compressions : 1 breath", "isOptional": false, "subtext": "90 compressions + 30 breaths = 120 events/min"},
+            {"id": "cpr_5", "text": "Increase FiO₂ to 100% when compressions started", "isOptional": false, "subtext": null},
+            {"id": "cpr_6", "text": "Reassess HR every 60 seconds", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "medications",
+          "title": "Medications",
+          "items": [
+            {"id": "med_1", "text": "Epinephrine indication: HR <60 after compressions + PPV", "isOptional": false, "subtext": null},
+            {"id": "med_2", "text": "Epinephrine IV/UVC: 0.01-0.03 mg/kg (1:10,000)", "isOptional": false, "subtext": "0.1-0.3 mL/kg of 1:10,000 concentration"},
+            {"id": "med_3", "text": "Epinephrine ETT (if no IV): 0.05-0.1 mg/kg", "isOptional": false, "subtext": "0.5-1 mL/kg of 1:10,000 - less reliable"},
+            {"id": "med_4", "text": "Volume expansion if hypovolemia suspected: 10 mL/kg NS or blood", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "spo2_targets",
+          "title": "Target SpO₂ by Time After Birth",
+          "items": [
+            {"id": "spo2_1", "text": "1 minute: 60-65%", "isOptional": false, "subtext": null},
+            {"id": "spo2_2", "text": "2 minutes: 65-70%", "isOptional": false, "subtext": null},
+            {"id": "spo2_3", "text": "3 minutes: 70-75%", "isOptional": false, "subtext": null},
+            {"id": "spo2_4", "text": "4 minutes: 75-80%", "isOptional": false, "subtext": null},
+            {"id": "spo2_5", "text": "5 minutes: 80-85%", "isOptional": false, "subtext": null},
+            {"id": "spo2_6", "text": "10 minutes: 85-95%", "isOptional": false, "subtext": null}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pals_quick_ref",
+      "name": "PALS Quick Reference",
+      "type": "emergency",
+      "description": "Memory aid for Pediatric Advanced Life Support key algorithms. Not a substitute for PALS certification.",
+      "disclaimer": "This is a memory aid only. Complete PALS training and certification is required. Always follow current AHA guidelines.",
+      "sourceUrls": ["https://cpr.heart.org/"],
+      "sections": [
+        {
+          "id": "bls_peds",
+          "title": "Pediatric BLS",
+          "items": [
+            {"id": "pbls_1", "text": "Check responsiveness and breathing", "isOptional": false, "subtext": null},
+            {"id": "pbls_2", "text": "Activate emergency response (call for help)", "isOptional": false, "subtext": "If alone with child: 2 min CPR first, then call"},
+            {"id": "pbls_3", "text": "Check pulse: Carotid (child) or Brachial/Femoral (infant)", "isOptional": false, "subtext": "Max 10 seconds"},
+            {"id": "pbls_4", "text": "If no pulse or HR <60 with poor perfusion: Start CPR", "isOptional": false, "subtext": null},
+            {"id": "pbls_5", "text": "Compression depth: At least 1/3 AP diameter", "isOptional": false, "subtext": "~1.5 inches infant, ~2 inches child"},
+            {"id": "pbls_6", "text": "Rate: 100-120 compressions/min", "isOptional": false, "subtext": null},
+            {"id": "pbls_7", "text": "Ratio: 30:2 (single rescuer) or 15:2 (two rescuers)", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "vfib_vtach",
+          "title": "VF/Pulseless VT",
+          "items": [
+            {"id": "vf_1", "text": "CPR while defibrillator charging", "isOptional": false, "subtext": null},
+            {"id": "vf_2", "text": "Shock: 2 J/kg first shock", "isOptional": false, "subtext": null},
+            {"id": "vf_3", "text": "Resume CPR immediately for 2 minutes", "isOptional": false, "subtext": null},
+            {"id": "vf_4", "text": "Shock: 4 J/kg second and subsequent shocks", "isOptional": false, "subtext": "Max 10 J/kg or adult dose"},
+            {"id": "vf_5", "text": "Epinephrine: 0.01 mg/kg IV/IO every 3-5 min", "isOptional": false, "subtext": "After 2nd shock"},
+            {"id": "vf_6", "text": "Amiodarone: 5 mg/kg IV/IO (max 300 mg)", "isOptional": false, "subtext": "After 3rd shock; can repeat x2"}
+          ]
+        },
+        {
+          "id": "asystole_pea",
+          "title": "Asystole/PEA",
+          "items": [
+            {"id": "asp_1", "text": "CPR for 2 minutes", "isOptional": false, "subtext": null},
+            {"id": "asp_2", "text": "Epinephrine: 0.01 mg/kg IV/IO every 3-5 min", "isOptional": false, "subtext": "Give as soon as access available"},
+            {"id": "asp_3", "text": "Search for reversible causes (H's and T's)", "isOptional": false, "subtext": null},
+            {"id": "asp_4", "text": "H's: Hypovolemia, Hypoxia, Hydrogen ion, Hypo/Hyperkalemia, Hypothermia", "isOptional": false, "subtext": null},
+            {"id": "asp_5", "text": "T's: Tension pneumo, Tamponade, Toxins, Thrombosis (pulm/coronary)", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "bradycardia",
+          "title": "Bradycardia with Pulse",
+          "items": [
+            {"id": "brady_1", "text": "Maintain airway, assist ventilation, give O₂", "isOptional": false, "subtext": null},
+            {"id": "brady_2", "text": "Attach monitor, obtain IV/IO access", "isOptional": false, "subtext": null},
+            {"id": "brady_3", "text": "If HR <60 with poor perfusion despite O₂/ventilation: Start CPR", "isOptional": false, "subtext": null},
+            {"id": "brady_4", "text": "Epinephrine: 0.01 mg/kg IV/IO", "isOptional": false, "subtext": null},
+            {"id": "brady_5", "text": "Atropine: 0.02 mg/kg IV/IO (min 0.1 mg, max 0.5 mg)", "isOptional": false, "subtext": "For increased vagal tone or AV block"},
+            {"id": "brady_6", "text": "Consider pacing if unresponsive to medications", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "tachycardia",
+          "title": "Tachycardia with Pulse",
+          "items": [
+            {"id": "tachy_1", "text": "Assess: Stable vs Unstable (altered mental status, hypotension, signs of shock)", "isOptional": false, "subtext": null},
+            {"id": "tachy_2", "text": "Narrow QRS + Unstable: Synchronized cardioversion 0.5-1 J/kg", "isOptional": false, "subtext": null},
+            {"id": "tachy_3", "text": "Narrow QRS + Stable: Vagal maneuvers, then Adenosine", "isOptional": false, "subtext": null},
+            {"id": "tachy_4", "text": "Adenosine: 0.1 mg/kg (max 6 mg) rapid push, may repeat 0.2 mg/kg (max 12 mg)", "isOptional": false, "subtext": null},
+            {"id": "tachy_5", "text": "Wide QRS + Unstable: Synchronized cardioversion 0.5-1 J/kg", "isOptional": false, "subtext": "May increase to 2 J/kg"},
+            {"id": "tachy_6", "text": "Wide QRS + Stable: Consider Amiodarone 5 mg/kg IV over 20-60 min", "isOptional": false, "subtext": null}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bls_quick_ref",
+      "name": "BLS Quick Reference",
+      "type": "emergency",
+      "description": "Memory aid for Basic Life Support for adult patients. Not a substitute for BLS certification.",
+      "disclaimer": "This is a memory aid only. Complete BLS training and certification is required. Always follow current AHA guidelines.",
+      "sourceUrls": ["https://cpr.heart.org/"],
+      "sections": [
+        {
+          "id": "adult_bls",
+          "title": "Adult BLS Sequence",
+          "items": [
+            {"id": "abls_1", "text": "Verify scene safety", "isOptional": false, "subtext": null},
+            {"id": "abls_2", "text": "Check responsiveness - tap and shout", "isOptional": false, "subtext": null},
+            {"id": "abls_3", "text": "Call for help / Activate EMS / Get AED", "isOptional": false, "subtext": null},
+            {"id": "abls_4", "text": "Check breathing and pulse simultaneously (max 10 sec)", "isOptional": false, "subtext": "Carotid pulse"},
+            {"id": "abls_5", "text": "No pulse: Begin CPR starting with compressions", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "compressions_adult",
+          "title": "Chest Compressions",
+          "items": [
+            {"id": "comp_1", "text": "Hand position: Heel of hand on lower half of sternum", "isOptional": false, "subtext": null},
+            {"id": "comp_2", "text": "Depth: At least 2 inches (5 cm), no more than 2.4 inches", "isOptional": false, "subtext": null},
+            {"id": "comp_3", "text": "Rate: 100-120 compressions/minute", "isOptional": false, "subtext": null},
+            {"id": "comp_4", "text": "Allow full chest recoil between compressions", "isOptional": false, "subtext": null},
+            {"id": "comp_5", "text": "Minimize interruptions (<10 seconds)", "isOptional": false, "subtext": null},
+            {"id": "comp_6", "text": "Rotate compressors every 2 minutes", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "ventilations",
+          "title": "Ventilations",
+          "items": [
+            {"id": "vent_1", "text": "Compression:Ventilation ratio: 30:2", "isOptional": false, "subtext": null},
+            {"id": "vent_2", "text": "With advanced airway: Continuous compressions, 1 breath every 6 sec", "isOptional": false, "subtext": "10 breaths/min"},
+            {"id": "vent_3", "text": "Each breath over 1 second with visible chest rise", "isOptional": false, "subtext": null},
+            {"id": "vent_4", "text": "Avoid excessive ventilation", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "aed_use",
+          "title": "AED Use",
+          "items": [
+            {"id": "aed_1", "text": "Power on AED", "isOptional": false, "subtext": null},
+            {"id": "aed_2", "text": "Attach pads to bare chest", "isOptional": false, "subtext": "Remove patches, dry if wet, shave if needed"},
+            {"id": "aed_3", "text": "Clear patient during analysis", "isOptional": false, "subtext": null},
+            {"id": "aed_4", "text": "If shock advised: Clear patient, deliver shock", "isOptional": false, "subtext": null},
+            {"id": "aed_5", "text": "Immediately resume CPR for 2 minutes", "isOptional": false, "subtext": null}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acls_quick_ref",
+      "name": "ACLS Quick Reference",
+      "type": "emergency",
+      "description": "Memory aid for Advanced Cardiovascular Life Support key algorithms. Not a substitute for ACLS certification.",
+      "disclaimer": "This is a memory aid only. Complete ACLS training and certification is required. Always follow current AHA guidelines.",
+      "sourceUrls": ["https://cpr.heart.org/"],
+      "sections": [
+        {
+          "id": "cardiac_arrest",
+          "title": "Cardiac Arrest Algorithm",
+          "items": [
+            {"id": "ca_1", "text": "Start CPR, give oxygen, attach monitor/defibrillator", "isOptional": false, "subtext": null},
+            {"id": "ca_2", "text": "Determine rhythm: Shockable (VF/pVT) vs Non-shockable (Asystole/PEA)", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "vfib_pvt",
+          "title": "VF/Pulseless VT",
+          "items": [
+            {"id": "vfpvt_1", "text": "Shock: 120-200J biphasic (or per device)", "isOptional": false, "subtext": null},
+            {"id": "vfpvt_2", "text": "CPR 2 minutes, IV/IO access", "isOptional": false, "subtext": null},
+            {"id": "vfpvt_3", "text": "Shock if still VF/pVT", "isOptional": false, "subtext": null},
+            {"id": "vfpvt_4", "text": "Epinephrine 1 mg IV/IO every 3-5 min", "isOptional": false, "subtext": "After 2nd shock"},
+            {"id": "vfpvt_5", "text": "CPR 2 minutes", "isOptional": false, "subtext": null},
+            {"id": "vfpvt_6", "text": "Shock if still VF/pVT", "isOptional": false, "subtext": null},
+            {"id": "vfpvt_7", "text": "Amiodarone 300 mg IV/IO (then 150 mg)", "isOptional": false, "subtext": "Or Lidocaine 1-1.5 mg/kg"},
+            {"id": "vfpvt_8", "text": "Continue cycle: CPR → Rhythm check → Shock if indicated → Drug", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "asystole_pea_acls",
+          "title": "Asystole/PEA",
+          "items": [
+            {"id": "aspea_1", "text": "CPR 2 minutes, IV/IO access", "isOptional": false, "subtext": null},
+            {"id": "aspea_2", "text": "Epinephrine 1 mg IV/IO every 3-5 min", "isOptional": false, "subtext": "As soon as possible"},
+            {"id": "aspea_3", "text": "CPR 2 minutes", "isOptional": false, "subtext": null},
+            {"id": "aspea_4", "text": "Treat reversible causes", "isOptional": false, "subtext": null}
+          ]
+        },
+        {
+          "id": "hs_ts",
+          "title": "H's and T's (Reversible Causes)",
+          "items": [
+            {"id": "ht_1", "text": "Hypovolemia", "isOptional": false, "subtext": "Volume resuscitation"},
+            {"id": "ht_2", "text": "Hypoxia", "isOptional": false, "subtext": "Oxygenation, ventilation"},
+            {"id": "ht_3", "text": "Hydrogen ion (acidosis)", "isOptional": false, "subtext": "Ventilation, consider bicarb"},
+            {"id": "ht_4", "text": "Hypo/Hyperkalemia", "isOptional": false, "subtext": "Treat electrolyte abnormality"},
+            {"id": "ht_5", "text": "Hypothermia", "isOptional": false, "subtext": "Rewarm"},
+            {"id": "ht_6", "text": "Tension pneumothorax", "isOptional": false, "subtext": "Needle decompression"},
+            {"id": "ht_7", "text": "Tamponade (cardiac)", "isOptional": false, "subtext": "Pericardiocentesis"},
+            {"id": "ht_8", "text": "Toxins", "isOptional": false, "subtext": "Antidote if available"},
+            {"id": "ht_9", "text": "Thrombosis (pulmonary)", "isOptional": false, "subtext": "Consider thrombolytics"},
+            {"id": "ht_10", "text": "Thrombosis (coronary)", "isOptional": false, "subtext": "Consider PCI"}
+          ]
+        },
+        {
+          "id": "rosc",
+          "title": "Post-ROSC Care",
+          "items": [
+            {"id": "rosc_1", "text": "Optimize ventilation: SpO₂ 92-98%, avoid hyperventilation", "isOptional": false, "subtext": null},
+            {"id": "rosc_2", "text": "Treat hypotension: SBP >90 or MAP >65", "isOptional": false, "subtext": "Fluids, vasopressors"},
+            {"id": "rosc_3", "text": "12-lead ECG: Consider emergent PCI if STEMI", "isOptional": false, "subtext": null},
+            {"id": "rosc_4", "text": "Consider targeted temperature management", "isOptional": false, "subtext": null},
+            {"id": "rosc_5", "text": "Treat underlying cause", "isOptional": false, "subtext": null}
+          ]
+        }
+      ]
+    }
+  ]
+}
